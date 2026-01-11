@@ -1,11 +1,11 @@
-# How I Solved My Telecom Assignment
+# OOP CAT 2: Thinking and Flow of execution
 
-**Teacher wanted step-by-step (a-g) where each answer uses previous results. Hardest was "(a) dependency recursion" - trace full chain: AuthCore→QueueRelay→EdgeOrchestrator→WebGateway→CloudInference.**
+**Task demanded a step-by-step (a-g) where each step requires previous output. Hardest was "(a) dependency recursion" - trace full chain: AuthCore→QueueRelay→EdgeOrchestrator→WebGateway→CloudInference.**
 
-## What I Built
+## My Answer;
 
 **1. (a) Dependency Recursion**  
-I took your `total_latency()` recursive function and ran it on all components. Added up AuthCore(21)+QueueRelay(27)+EdgeOrchestrator(31)+WebGateway(38)+CloudInference(44) = **161ms total**. **CloudInference dominates** since it's end of chain.
+I took my `total_latency()` recursive function and ran it on all components. Added up AuthCore(21)+QueueRelay(27)+EdgeOrchestrator(31)+WebGateway(38)+CloudInference(44) = **161ms total**. **CloudInference dominates** since it's end of chain.
 
 **2. (b) Consensus-RPC**  
 Took my 161ms from (a), multiplied by 0.9 = **144.9ms threshold**. Tested if all components stay under it. They do, so consensus passes.
